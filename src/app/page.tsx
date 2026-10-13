@@ -1,69 +1,9 @@
-import Image from "next/image";
+import Link from "next/link";
+import { PublicFooter, PublicHeader } from "@/components/site-shell";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <><PublicHeader /><main><section className="hero"><div><div className="eyebrow">Scholarship planning, made clearer</div><h1>Find your next step with <em>confidence.</em></h1><p className="hero-copy">ScholarReady brings scholarship discovery, eligibility context, and application preparation into one reassuring workspace.</p><div className="hero-actions"><Link href="/signup" className="button">Build your profile <span aria-hidden="true">→</span></Link><a href="#how-it-works" className="text-link">See how it works</a></div><div className="hero-note"><strong>✦</strong> Fictional opportunities. Transparent guidance. No award promises.</div></div><div className="hero-visual" aria-label="Preview of an application readiness dashboard"><div className="dash-card"><div className="dash-top"><div><small>Good afternoon, Alex</small><br /><b>Your application plan</b></div><StatusDot /></div><small className="metric-label">North Star STEM Award</small><div className="readiness"><div className="ring">67%</div><div><b>Getting there</b><span>2 of 3 key steps complete</span></div></div><div className="dash-item"><span className="check">✓</span>Confirm academic transcript</div><div className="dash-item"><span className="check">✓</span>Draft personal statement</div><div className="dash-item"><span className="check check-empty">✓</span>Request faculty reference</div></div></div></section><div className="trust-banner"><span className="trust-icon">◈</span><div><strong>A calmer approach to scholarship planning</strong><p>ScholarReady uses fictional demonstration opportunities and explainable matching. It helps you prepare; it never predicts awards or guarantees outcomes.</p></div></div><section className="section" id="how-it-works"><div className="section-inner"><div className="section-heading"><div className="eyebrow">A simple rhythm</div><h2>From “where do I start?” to “I’m ready.”</h2><p>Keep the important details together, understand what each opportunity asks for, and move forward one useful step at a time.</p></div><div className="steps"><Step n="01" title="Shape your profile" text="Add your study details, interests, and activities once." /><Step n="02" title="Explore your matches" text="See why a fictional scholarship may fit — or what is still unknown." /><Step n="03" title="Compare clearly" text="Put up to three opportunities side by side before you decide." /><Step n="04" title="Prepare with purpose" text="Track evidence, deadlines, notes, and checklist progress." /></div></div></section><section className="section section-tint"><div className="section-inner"><div className="section-heading"><div className="eyebrow">Built around your process</div><h2>Less searching. More knowing.</h2></div><div className="feature-grid"><Feature title="Explainable matches" text="Every criterion is shown as met, missing, or unknown in plain language." /><Feature title="One preparation space" text="Keep evidence metadata, notes, tasks, and deadlines connected to each application." /><Feature title="Progress you can see" text="A simple readiness indicator helps you choose your next action without adding pressure." /></div></div></section></main><PublicFooter /></>;
 }
+function Step({ n, title, text }: { n: string; title: string; text: string }) { return <div className="step"><span className="step-num">{n}</span><h3>{title}</h3><p>{text}</p></div>; }
+function Feature({ title, text }: { title: string; text: string }) { return <div className="feature"><b>{title}</b><p>{text}</p></div>; }
+function StatusDot() { return <span className="status status-eligible"><i />On track</span>; }

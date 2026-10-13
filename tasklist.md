@@ -18,7 +18,7 @@
 - [x] **1.1 Create the Next.js project foundation.** Initialize the App Router project with TypeScript strict mode, Tailwind CSS, ESLint, a `src` directory, and the `@/`* alias.
   **Verification Gate:** Run `npm run dev`; confirm the home route opens at `http://localhost:3000` without terminal or browser-console errors, then stop the server.
 
-- [ ] **1.2 Add the standard quality scripts.** Add scripts for `lint`, `test` (using the chosen lightweight test runner), and `build`, plus only the packages needed by the current architecture.
+- [x] **1.2 Add the standard quality scripts.** Add scripts for `lint`, `test` (using the chosen lightweight test runner), and `build`, plus only the packages needed by the current architecture.
   **Verification Gate:** Run `npm run lint`, the empty/smoke `npm run test`, and `npm run build`; all three commands must exit successfully.
 
 - [ ] **1.3 Protect configuration files.** Confirm `.env`* secrets are ignored, create `.env.example` with the three variable names from `PRD.md`, and document local setup without including values.

@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { PublicHeader } from "@/components/site-shell";
+export default function ResetPasswordPage() { return <><PublicHeader /><main className="auth-wrap"><form className="auth-card"><div className="eyebrow">Account access</div><h1>Reset your password</h1><p>Enter your email and we will show the next step once Supabase Auth is connected.</p><div className="field"><label htmlFor="email">Email address</label><input id="email" type="email" placeholder="you@example.com" required /></div><button className="button" type="submit">Send reset link <span aria-hidden="true">→</span></button><div className="auth-switch"><Link href="/login">← Back to sign in</Link></div></form></main></>; }

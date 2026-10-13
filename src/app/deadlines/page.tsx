@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { AppShell, StatusPill } from "@/components/site-shell";
+import { applications, formatDate } from "@/lib/demo-data";
+
+export default function DeadlinesPage() { return <AppShell active="Deadlines"><div className="page-content"><div className="page-header"><div><div className="breadcrumb">Keep your next steps visible</div><h1>Deadlines</h1><p>One chronological view of the applications you are preparing.</p></div><Link href="/scholarships" className="button">Find an opportunity <span aria-hidden="true">→</span></Link></div><section className="panel"><div className="panel-heading"><h2>Upcoming application dates</h2><span className="metric-label">2 tracked applications</span></div>{applications.map((app, index) => <div className="deadline-row" key={app.id}><div><StatusPill state={index === 0 ? "Due within 30 days" : "Later"} /><strong style={{ marginTop: 9 }}>{app.name}</strong><small>{app.provider} · {app.status}</small></div><div className="deadline-date">{formatDate(app.deadline)}<small>{index === 0 ? "Keep preparing" : "Time to plan"}</small></div></div>)}</section></div></AppShell>; }

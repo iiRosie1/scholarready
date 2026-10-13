@@ -21,7 +21,7 @@
 - [x] **1.2 Add the standard quality scripts.** Add scripts for `lint`, `test` (using the chosen lightweight test runner), and `build`, plus only the packages needed by the current architecture.
   **Verification Gate:** Run `npm run lint`, the empty/smoke `npm run test`, and `npm run build`; all three commands must exit successfully.
 
-- [ ] **1.3 Protect configuration files.** Confirm `.env`* secrets are ignored, create `.env.example` with the three variable names from `PRD.md`, and document local setup without including values.
+- [x] **1.3 Protect configuration files.** Confirm `.env`* secrets are ignored, create `.env.example` with the three variable names from `PRD.md`, and document local setup without including values.
   **Verification Gate:** Run `git check-ignore .env.local` and inspect `.env.example`; `.env.local` must be ignored and no real secret may appear in tracked changes.
 
 - [ ] **1.4 Confirm the zero-cost dependency boundary.** Add a short README cost section listing GitHub Free, Supabase Free, Vercel Hobby, open-source packages, the free `.vercel.app` address, and every intentionally omitted paid integration.

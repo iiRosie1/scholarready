@@ -1,12 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { AppShell, StatusPill } from "@/components/site-shell";
 import { formatDate, scholarships, type MatchState } from "@/lib/demo-data";
+import { filterAndSortScholarships, type ScholarshipSort } from "@/lib/scholarship-filters";
 
 const matchStateReason: Record<MatchState, string> = {
   Eligible: "All listed criteria are currently supported by your profile context.",
   "Possibly eligible": "No required criterion has failed, but more profile information is needed.",
   "Not eligible": "At least one listed criterion is not currently supported by your profile context.",
 };
+
+type Filters = { search: string; category: string; eligibility: "all" | MatchState; sort: ScholarshipSort };
+const initialFilters: Filters = { search: "", category: "all", eligibility: "all", sort: "match" };
 
 function ScholarshipCard({ scholarship }: { scholarship: (typeof scholarships)[number] }) {
   return <article className="scholar-card" aria-labelledby={`${scholarship.id}-title`}>
@@ -27,6 +34,11 @@ function ScholarshipCard({ scholarship }: { scholarship: (typeof scholarships)[n
 }
 
 export default function ScholarshipsPage() {
+  const [filters, setFilters] = useState<Filters>(initialFilters);
+  const results = useMemo(() => filterAndSortScholarships(scholarships, filters), [filters]);
+  const updateFilter = <K extends keyof Filters>(key: K, value: Filters[K]) => setFilters(current => ({ ...current, [key]: value }));
+  const resetFilters = () => setFilters(initialFilters);
+
   return <AppShell active="Find scholarships">
     <div className="page-content">
       <div className="page-header">
@@ -39,8 +51,15 @@ export default function ScholarshipsPage() {
         <div><span className="profile-prompt-kicker">Improve your match context</span><h2 id="profile-prompt-title">Complete your profile for clearer explanations</h2><p>Add your study year, GPA, and activity tags so ScholarReady can show more useful met, unmet, and unknown criteria.</p></div>
         <Link href="/profile" className="button button-small">Update profile <span aria-hidden="true">→</span></Link>
       </section>
-      <div className="filter-bar"><input aria-label="Search scholarships" placeholder="Search by name or provider" /><select aria-label="Filter by category" defaultValue="all"><option value="all">All categories</option><option>STEM</option><option>Community</option><option>Environment</option><option>Creative</option></select><select aria-label="Sort scholarships" defaultValue="match"><option value="match">Best match</option><option value="deadline">Deadline soonest</option><option value="name">Name A–Z</option></select><button className="button button-small button-quiet" type="button">Reset</button></div>
-      <div className="scholarship-grid">{scholarships.map(scholarship => <ScholarshipCard key={scholarship.id} scholarship={scholarship} />)}</div>
+      <form className="filter-bar" aria-label="Scholarship filters" onSubmit={event => event.preventDefault()}>
+        <label className="sr-only" htmlFor="scholarship-search">Search scholarships</label><input id="scholarship-search" aria-label="Search scholarships" placeholder="Search by name or provider" value={filters.search} onChange={event => updateFilter("search", event.target.value)} />
+        <label className="sr-only" htmlFor="scholarship-category">Filter by category</label><select id="scholarship-category" aria-label="Filter by category" value={filters.category} onChange={event => updateFilter("category", event.target.value)}><option value="all">All categories</option><option>STEM</option><option>Community</option><option>Environment</option><option>Creative</option></select>
+        <label className="sr-only" htmlFor="scholarship-eligibility">Filter by eligibility</label><select id="scholarship-eligibility" aria-label="Filter by eligibility" value={filters.eligibility} onChange={event => updateFilter("eligibility", event.target.value as Filters["eligibility"])}><option value="all">All match states</option><option>Eligible</option><option>Possibly eligible</option><option>Not eligible</option></select>
+        <label className="sr-only" htmlFor="scholarship-sort">Sort scholarships</label><select id="scholarship-sort" aria-label="Sort scholarships" value={filters.sort} onChange={event => updateFilter("sort", event.target.value as ScholarshipSort)}><option value="match">Best match</option><option value="deadline">Deadline soonest</option><option value="amount">Award amount</option><option value="name">Name A–Z</option></select>
+        <button className="button button-small button-quiet" type="button" onClick={resetFilters}>Reset</button>
+      </form>
+      <div className="results-summary" aria-live="polite">{results.length} {results.length === 1 ? "opportunity" : "opportunities"} shown</div>
+      {results.length > 0 ? <div className="scholarship-grid">{results.map(scholarship => <ScholarshipCard key={scholarship.id} scholarship={scholarship} />)}</div> : <section className="empty-state results-empty" aria-live="polite"><h2>No scholarships match those filters</h2><p>Try a broader search or reset the filters to review the full catalog.</p><button className="button button-small" type="button" onClick={resetFilters}>Reset filters</button></section>}
     </div>
   </AppShell>;
 }

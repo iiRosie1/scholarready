@@ -106,7 +106,7 @@
 - [x] **5.2 Add eligibility explanations.** Display each scholarship's met, unmet, and unknown criteria with plain-language limitations.
   **Verification Gate:** Compare UI explanations against matcher unit-test fixtures for one scholarship in each state; every criterion and limitation must agree with the computed result.
 
-- [ ] **5.3 Add search, filters, sorting, and empty/reset states.** Support name/provider search, category and eligibility filters, and deadline/amount/name sorting without changing stored data.
+- [x] **5.3 Add search, filters, sorting, and empty/reset states.** Support name/provider search, category and eligibility filters, and deadline/amount/name sorting without changing stored data.
   **Verification Gate:** Exercise each control alone and in combination; confirm expected results, stable sorting, a useful zero-results state, and a working Reset action.
 
 - [ ] **5.4 Add compare selection controls.** Let a user add/remove up to three scholarships and navigate to `/compare`, preserving selection for the current browser session.

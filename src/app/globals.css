@@ -69,3 +69,10 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .criterion-copy { display:grid; gap:3px; min-width:0; }
 .criterion-copy small { color:var(--muted); font-size:10px; line-height:1.4; }
 .criterion b.met { color:var(--teal); }.criterion b.unknown { color:#97712b; }.criterion b.not { color:var(--coral); }
+
+/* Scholarship filter states */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.results-summary { margin:-7px 2px 14px; color:var(--muted); font-size:11px; }
+.results-empty { background:white; border:1px solid var(--line); border-radius:11px; }
+.results-empty p { margin:7px 0 18px; }
+@media (max-width:850px) { .filter-bar select { flex:1; } }

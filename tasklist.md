@@ -90,7 +90,7 @@
 - [ ] **4.2 Persist the user's profile.** Add a server-validated profile upsert tied only to `auth.uid()` and show loading, success, and failure feedback.
   **Verification Gate:** Save a fictional profile, refresh and sign in again; all saved values must return. Try an out-of-range GPA/year and confirm server rejection.
 
-- [ ] **4.3 Create the pure rule-matching module.** Implement typed evaluation for the MVP's supported rules and output `eligible`, `possibly eligible`, or `not eligible` with a reason for every criterion.
+- [x] **4.3 Create the pure rule-matching module.** Implement typed evaluation for the MVP's supported rules and output `eligible`, `possibly eligible`, or `not eligible` with a reason for every criterion.
   **Verification Gate:** Run unit tests covering every operator, missing profile data, all-rules-met, one-rule-failed, and optional-rule behavior; all tests must pass.
 
 - [ ] **4.4 Create the readiness and deadline utilities.** Implement zero-safe readiness percentage and overdue/7-day/30-day/later urgency calculations.

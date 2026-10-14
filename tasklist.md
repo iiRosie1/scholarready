@@ -30,7 +30,7 @@
 - [x] **1.5 Create the shared visual foundation.** Define color, spacing, typography, focus-ring, status, and container styles in the global stylesheet/Tailwind theme.
   **Verification Gate:** Render a small style-sample on the home route and manually confirm readable type, visible 2px keyboard focus, and no horizontal overflow at 375px and 1440px.
 
-- [ ] **1.6 Create shared layout components.** Build public header/footer and protected desktop-sidebar/mobile-menu shells with semantic landmarks and current-route states.
+- [x] **1.6 Create shared layout components.** Build public header/footer and protected desktop-sidebar/mobile-menu shells with semantic landmarks and current-route states.
   **Verification Gate:** Run the local server and keyboard through every navigation control at 375px and 1440px; focus order, labels, active state, menu close behavior, and overflow must be correct.
 
 

@@ -24,7 +24,7 @@
 - [x] **1.3 Protect configuration files.** Confirm `.env`* secrets are ignored, create `.env.example` with the three variable names from `PRD.md`, and document local setup without including values.
   **Verification Gate:** Run `git check-ignore .env.local` and inspect `.env.example`; `.env.local` must be ignored and no real secret may appear in tracked changes.
 
-- [ ] **1.4 Confirm the zero-cost dependency boundary.** Add a short README cost section listing GitHub Free, Supabase Free, Vercel Hobby, open-source packages, the free `.vercel.app` address, and every intentionally omitted paid integration.
+- [x] **1.4 Confirm the zero-cost dependency boundary.** Add a short README cost section listing GitHub Free, Supabase Free, Vercel Hobby, open-source packages, the free `.vercel.app` address, and every intentionally omitted paid integration.
   **Verification Gate:** Inspect the package list and setup instructions; the MVP must require no paid package, commercial asset, custom domain, billing-enabled API, or payment method.
 
 - [ ] **1.5 Create the shared visual foundation.** Define color, spacing, typography, focus-ring, status, and container styles in the global stylesheet/Tailwind theme.

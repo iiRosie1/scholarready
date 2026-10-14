@@ -45,3 +45,17 @@ npm run build
 ```
 
 The current frontend uses fictional demo data. Supabase authentication, persistence, migrations, and Row Level Security are added in later MVP tasks.
+
+## Zero-cost implementation boundary
+
+ScholarReady is designed to run without payment details for this assignment:
+
+- **Source control:** GitHub Free repository.
+- **Database, authentication, and reset email:** Supabase Free project.
+- **Hosting and HTTPS:** Vercel Hobby with its free `.vercel.app` address; a custom domain is not required.
+- **Application packages:** open-source Next.js, React, TypeScript, Tailwind CSS, and ESLint packages only.
+- **Catalog and matching:** local fictional records and deterministic TypeScript rules, without a paid data feed, scraping service, generative-AI API, or prediction API.
+- **Evidence tracking:** text metadata and statuses only, without paid file storage or OCR.
+- **Pricing:** static plan information only; no checkout or payment processing.
+
+The product intentionally does not require or integrate paid GitHub features, a commercial template or component kit, a paid database or authentication provider, paid hosting, a custom domain, Stripe, Drizzle, Clerk, ImageKit, paid analytics, background-job infrastructure, or any billing-enabled API. If a free-plan quota is reached, reduce seeded records or test traffic rather than adding a paid dependency.

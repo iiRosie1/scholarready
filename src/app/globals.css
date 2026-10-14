@@ -50,3 +50,15 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .checkbox-field input { width:17px; height:17px; margin:1px 0 0; accent-color:var(--teal); flex:0 0 auto; }
 .checkbox-field strong, .checkbox-field small { display:block; }.checkbox-field small { color:var(--muted); font-size:11px; margin-top:3px; }
 @media (max-width:850px) { .form-two { grid-template-columns:1fr; }.form-panel { padding:22px 18px; } }
+
+/* Scholarship catalog presentation */
+.catalog-notice { margin-bottom:18px; }
+.profile-prompt { display:flex; align-items:center; gap:16px; margin-bottom:18px; padding:18px 20px; border:1px solid #cfe2dc; background:#eef7f2; border-radius:11px; }
+.profile-prompt-icon { width:34px; height:34px; display:grid; place-items:center; flex:0 0 auto; color:var(--teal); background:white; border:1px solid #cfe2dc; border-radius:50%; font-size:21px; }
+.profile-prompt-kicker { display:block; color:var(--teal); font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.profile-prompt h2 { margin:3px 0 4px; font-size:16px; }
+.profile-prompt p { margin:0; color:#5d776f; font-size:12px; line-height:1.5; }
+.profile-prompt .button { margin-left:auto; flex:0 0 auto; }
+.card-link { display:inline-flex; gap:8px; align-items:center; margin-top:20px; color:var(--teal); font-size:12px; font-weight:800; }
+.card-link:hover { color:var(--teal-dark); }
+@media (max-width:850px) { .profile-prompt { align-items:flex-start; flex-wrap:wrap; }.profile-prompt .button { margin-left:50px; }.card-link { margin-top:18px; } }

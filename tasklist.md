@@ -100,7 +100,7 @@
 
 ## Module 5 - Scholarship discovery and comparison
 
-- [ ] **5.1 Build the scholarship matches route.** Render seeded fictional scholarships on `/scholarships` with deadline, amount label, category, match state, and an incomplete-profile prompt.
+- [x] **5.1 Build the scholarship matches route.** Render seeded fictional scholarships on `/scholarships` with deadline, amount label, category, match state, and an incomplete-profile prompt.
   **Verification Gate:** Test with complete and incomplete fictional profiles; every card must show the correct state, the fictional-data notice, and no uncaught loading/error state.
 
 - [ ] **5.2 Add eligibility explanations.** Display each scholarship's met, unmet, and unknown criteria with plain-language limitations.

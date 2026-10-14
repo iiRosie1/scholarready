@@ -27,7 +27,7 @@
 - [x] **1.4 Confirm the zero-cost dependency boundary.** Add a short README cost section listing GitHub Free, Supabase Free, Vercel Hobby, open-source packages, the free `.vercel.app` address, and every intentionally omitted paid integration.
   **Verification Gate:** Inspect the package list and setup instructions; the MVP must require no paid package, commercial asset, custom domain, billing-enabled API, or payment method.
 
-- [ ] **1.5 Create the shared visual foundation.** Define color, spacing, typography, focus-ring, status, and container styles in the global stylesheet/Tailwind theme.
+- [x] **1.5 Create the shared visual foundation.** Define color, spacing, typography, focus-ring, status, and container styles in the global stylesheet/Tailwind theme.
   **Verification Gate:** Render a small style-sample on the home route and manually confirm readable type, visible 2px keyboard focus, and no horizontal overflow at 375px and 1440px.
 
 - [ ] **1.6 Create shared layout components.** Build public header/footer and protected desktop-sidebar/mobile-menu shells with semantic landmarks and current-route states.

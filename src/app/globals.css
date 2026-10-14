@@ -62,3 +62,10 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .card-link { display:inline-flex; gap:8px; align-items:center; margin-top:20px; color:var(--teal); font-size:12px; font-weight:800; }
 .card-link:hover { color:var(--teal-dark); }
 @media (max-width:850px) { .profile-prompt { align-items:flex-start; flex-wrap:wrap; }.profile-prompt .button { margin-left:50px; }.card-link { margin-top:18px; } }
+
+/* Eligibility explanation hierarchy */
+.match-state-reason { margin:16px 0 0; padding:11px 12px; border:1px solid var(--line); border-radius:7px; color:#59717a; background:#f7faf8; font-size:11px; line-height:1.5; }
+.criterion { align-items:flex-start; }
+.criterion-copy { display:grid; gap:3px; min-width:0; }
+.criterion-copy small { color:var(--muted); font-size:10px; line-height:1.4; }
+.criterion b.met { color:var(--teal); }.criterion b.unknown { color:#97712b; }.criterion b.not { color:var(--coral); }

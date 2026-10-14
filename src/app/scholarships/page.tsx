@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { AppShell, StatusPill } from "@/components/site-shell";
-import { formatDate, scholarships } from "@/lib/demo-data";
+import { formatDate, scholarships, type MatchState } from "@/lib/demo-data";
+
+const matchStateReason: Record<MatchState, string> = {
+  Eligible: "All listed criteria are currently supported by your profile context.",
+  "Possibly eligible": "No required criterion has failed, but more profile information is needed.",
+  "Not eligible": "At least one listed criterion is not currently supported by your profile context.",
+};
 
 function ScholarshipCard({ scholarship }: { scholarship: (typeof scholarships)[number] }) {
   return <article className="scholar-card" aria-labelledby={`${scholarship.id}-title`}>
@@ -9,8 +15,12 @@ function ScholarshipCard({ scholarship }: { scholarship: (typeof scholarships)[n
     <div className="provider">{scholarship.provider}</div>
     <p className="scholar-summary">{scholarship.summary}</p>
     <div className="scholar-meta"><span>AWARD<b>{scholarship.amount}</b></span><span>DEADLINE<b>{formatDate(scholarship.deadline)}</b></span></div>
-    <div className="criteria" aria-label={`${scholarship.name} match summary`}>
-      {scholarship.criteria.map(criterion => <div className="criterion" key={criterion.label}><span>{criterion.label}</span><b className={criterion.status === "Not met" ? "not" : ""}>{criterion.status === "Met" ? "✓ Met" : criterion.status === "Unknown" ? "? Unknown" : "× Not met"}</b></div>)}
+    <p className="match-state-reason">{matchStateReason[scholarship.state]}</p>
+    <div className="criteria" aria-label={`${scholarship.name} eligibility explanations`}>
+      {scholarship.criteria.map(criterion => <div className="criterion" key={criterion.label}>
+        <div className="criterion-copy"><span>{criterion.label}</span><small>{criterion.explanation}</small></div>
+        <b className={criterion.status === "Not met" ? "not" : criterion.status === "Unknown" ? "unknown" : "met"}>{criterion.status === "Met" ? "✓ Met" : criterion.status === "Unknown" ? "? Unknown" : "× Not met"}</b>
+      </div>)}
     </div>
     <Link className="card-link" href={`/applications/${scholarship.id}`}>Review opportunity <span aria-hidden="true">→</span></Link>
   </article>;

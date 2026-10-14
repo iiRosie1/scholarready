@@ -103,7 +103,7 @@
 - [x] **5.1 Build the scholarship matches route.** Render seeded fictional scholarships on `/scholarships` with deadline, amount label, category, match state, and an incomplete-profile prompt.
   **Verification Gate:** Test with complete and incomplete fictional profiles; every card must show the correct state, the fictional-data notice, and no uncaught loading/error state.
 
-- [ ] **5.2 Add eligibility explanations.** Display each scholarship's met, unmet, and unknown criteria with plain-language limitations.
+- [x] **5.2 Add eligibility explanations.** Display each scholarship's met, unmet, and unknown criteria with plain-language limitations.
   **Verification Gate:** Compare UI explanations against matcher unit-test fixtures for one scholarship in each state; every criterion and limitation must agree with the computed result.
 
 - [ ] **5.3 Add search, filters, sorting, and empty/reset states.** Support name/provider search, category and eligibility filters, and deadline/amount/name sorting without changing stored data.

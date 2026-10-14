@@ -109,7 +109,7 @@
 - [x] **5.3 Add search, filters, sorting, and empty/reset states.** Support name/provider search, category and eligibility filters, and deadline/amount/name sorting without changing stored data.
   **Verification Gate:** Exercise each control alone and in combination; confirm expected results, stable sorting, a useful zero-results state, and a working Reset action.
 
-- [ ] **5.4 Add compare selection controls.** Let a user add/remove up to three scholarships and navigate to `/compare`, preserving selection for the current browser session.
+- [x] **5.4 Add compare selection controls.** Let a user add/remove up to three scholarships and navigate to `/compare`, preserving selection for the current browser session.
   **Verification Gate:** Attempt zero through four selections; the UI must require at least two for meaningful comparison, cap selection at three, and explain the cap accessibly.
 
 - [ ] **5.5 Build the comparison table.** Compare selected scholarship deadlines, award labels, eligibility states, and criteria side by side with remove/back actions.

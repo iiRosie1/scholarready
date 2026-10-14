@@ -35,3 +35,18 @@ button, a { -webkit-tap-highlight-color:transparent; }
   .mobile-menu { display:grid; gap:4px; padding:12px 20px 16px; background:white; border-bottom:1px solid var(--line); }
   .mobile-menu[hidden] { display:none; }
 }
+
+/* Profile form validation */
+.form-heading-row { display:flex; justify-content:space-between; align-items:flex-start; }
+.form-helper, .field-help { color:var(--muted); font-size:11px; line-height:1.45; }
+.form-helper { margin:-14px 0 20px; }
+.required-mark { color:var(--coral); font-weight:800; }
+.optional-label { color:var(--muted); font-size:10px; font-weight:500; margin-left:4px; }
+.form-error-summary { margin:-5px 0 20px; padding:11px 13px; border-left:3px solid var(--coral); background:#f9e8e4; color:#7f493e; font-size:12px; line-height:1.45; }
+.field-error { color:var(--danger); font-size:11px; line-height:1.35; }
+.field input[aria-invalid="true"], .field select[aria-invalid="true"] { border-color:var(--danger); box-shadow:0 0 0 1px var(--danger); }
+.form-section-title { margin-top:26px !important; }
+.checkbox-field { display:flex; align-items:flex-start; gap:10px; margin:4px 0 18px; color:var(--ink); font-size:12px; line-height:1.4; cursor:pointer; }
+.checkbox-field input { width:17px; height:17px; margin:1px 0 0; accent-color:var(--teal); flex:0 0 auto; }
+.checkbox-field strong, .checkbox-field small { display:block; }.checkbox-field small { color:var(--muted); font-size:11px; margin-top:3px; }
+@media (max-width:850px) { .form-two { grid-template-columns:1fr; }.form-panel { padding:22px 18px; } }

@@ -84,7 +84,7 @@
 
 ## Module 4 - Profile and matching engine
 
-- [ ] **4.1 Build the profile form UI.** Create `/profile` with the defined academic fields, activity tags, validation, required/optional indicators, and fictional-data guidance.
+- [x] **4.1 Build the profile form UI.** Create `/profile` with the defined academic fields, activity tags, validation, required/optional indicators, and fictional-data guidance.
   **Verification Gate:** At 375px and 1440px, keyboard through the form and trigger each validation state; labels, error associations, focus movement, and layout must be correct.
 
 - [ ] **4.2 Persist the user's profile.** Add a server-validated profile upsert tied only to `auth.uid()` and show loading, success, and failure feedback.

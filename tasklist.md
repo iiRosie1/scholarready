@@ -93,7 +93,7 @@
 - [x] **4.3 Create the pure rule-matching module.** Implement typed evaluation for the MVP's supported rules and output `eligible`, `possibly eligible`, or `not eligible` with a reason for every criterion.
   **Verification Gate:** Run unit tests covering every operator, missing profile data, all-rules-met, one-rule-failed, and optional-rule behavior; all tests must pass.
 
-- [ ] **4.4 Create the readiness and deadline utilities.** Implement zero-safe readiness percentage and overdue/7-day/30-day/later urgency calculations.
+- [x] **4.4 Create the readiness and deadline utilities.** Implement zero-safe readiness percentage and overdue/7-day/30-day/later urgency calculations.
   **Verification Gate:** Run boundary tests for zero tasks, partial/all completion, exact date boundaries, and an overdue date using a fixed clock; all tests must pass.
 
 

@@ -112,7 +112,7 @@
 - [x] **5.4 Add compare selection controls.** Let a user add/remove up to three scholarships and navigate to `/compare`, preserving selection for the current browser session.
   **Verification Gate:** Attempt zero through four selections; the UI must require at least two for meaningful comparison, cap selection at three, and explain the cap accessibly.
 
-- [ ] **5.5 Build the comparison table.** Compare selected scholarship deadlines, award labels, eligibility states, and criteria side by side with remove/back actions.
+- [x] **5.5 Build the comparison table.** Compare selected scholarship deadlines, award labels, eligibility states, and criteria side by side with remove/back actions.
   **Verification Gate:** Audit the table at 1440px and 375px; headers/caption must be announced correctly, all data must remain accessible, and narrow layouts may scroll without clipping controls.
 
 

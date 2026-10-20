@@ -105,3 +105,25 @@ button, a { -webkit-tap-highlight-color:transparent; }
 .text-button:hover { color:var(--teal-dark); text-decoration:underline; }
 .compare-next-note { margin:18px 0 0; padding-top:15px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
 @media (max-width:520px) { .scholar-card-actions,.compare-selection-bar,.compare-selection-summary,.selected-row { align-items:stretch; flex-direction:column; }.scholar-card-actions .card-link { align-self:flex-start; }.compare-selection-bar .button { width:100%; }.selected-row .status { align-self:flex-start; }.selected-preview { flex-wrap:wrap; } }
+
+/* Side-by-side comparison table */
+.comparison-section { background:white; border:1px solid var(--line); border-radius:11px; padding:25px; }
+.comparison-section .panel-heading { align-items:flex-start; }
+.comparison-helper { color:var(--muted); font-size:12px; margin:7px 0 0; max-width:590px; }
+.compare-table { min-width:760px; }
+.compare-table thead th { min-width:220px; }
+.compare-table thead th:first-child { min-width:160px; width:160px; }
+.compare-table thead th strong { line-height:1.2; }
+.compare-table thead th small { display:block; color:var(--muted); font-size:11px; font-weight:400; }
+.table-remove { display:block; margin-top:12px; padding:0; }
+.compare-table tbody tr:last-child th,.compare-table tbody tr:last-child td { border-bottom:0; }
+.compare-table td > strong { font-size:14px; }
+.table-note { display:block; margin-top:7px; color:var(--muted); font-size:11px; line-height:1.4; }
+.comparison-criterion { display:grid; gap:7px; }
+.comparison-criterion strong { font-size:11px; }
+.comparison-criterion .met { color:var(--teal); }
+.comparison-criterion .unknown { color:#4b6570; }
+.comparison-criterion .not { color:var(--coral); }
+.comparison-criterion span { color:#59717a; font-size:11px; line-height:1.5; max-width:250px; }
+.comparison-footer { display:flex; justify-content:space-between; align-items:center; gap:15px; padding-top:17px; color:var(--muted); font-size:11px; }
+@media (max-width:700px) { .comparison-section { padding:17px; }.comparison-section .panel-heading { align-items:stretch; flex-direction:column; gap:12px; }.comparison-section .panel-heading .button { align-self:flex-start; }.comparison-footer { align-items:flex-start; flex-direction:column; gap:7px; } }
